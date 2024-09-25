@@ -1,0 +1,27 @@
+<p style="color: green"><%= notice %></p>
+
+<% content_for :title, "Flats" %>
+<h1>Flats</h1>
+<%= link_to "New flat", new_flat_path %>
+<div class="row" id="flats">
+  <% @flats.each do |flat| %>
+  <div class="card col-4 m-2">
+    <p>
+    <strong>Name:</strong>
+    <%= flat.name %>
+  </p>
+  <p>
+    <strong>Price per night:</strong>
+    <%= flat.price_per_night %>
+  </p>
+
+  <p>
+    <strong>Number of guests:</strong>
+    <%= flat.number_of_guests %>
+  </p>
+    <p>
+      <%= link_to "Show this flat", flat %>
+    </p>
+    </div>
+  <% end %>
+</div>
